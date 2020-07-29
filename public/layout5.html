@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형, 6단 </title>
+    <style>
+        * { margin: 0; padding: 0;}
+        body { background-color: #e3f2fd; }
+        #wrap { width: 1200px; margin: 0 auto; overflow: hidden;}
+        header { width: 100%; height: 50px; background: #81d4fa;}
+        aside  { width: 30%; height: 900px;  background: #4fc3f7; float: left;}
+        #article1  { width: 70%; height: 300px; background: #29b6f6;  float: left;}
+        #article2  { width: 70%; height: 300px; background: #03a9f4;  float: left;}
+        #article3  { width: 70%; height: 300px; background: #039be5;  float: left;}
+        footer { width: 100%; height: 50px; background: #0288d1; clear: both;}
+
+        /* 미디어 쿼리 */
+        /* 1240 */
+        @media (max-width: 1240px){
+            #wrap { width: 100%; }
+            header { height: 100px; }
+            #article1  { height: 450px;  }
+            #article2  { height: 450px;  }
+            #article3  { float: none; clear: both; width: 100%; }
+        }
+
+        /* 960px */
+        @media (max-width: 960px) {
+            
+        }
+
+        /* 768px */
+        @media (max-width: 768px) {
+            header { height: 150px; }
+            aside  { float: none; width: 100%; height: 400px; }
+            #article1  { width: 50%;  }
+            #article2  { width: 50%;  }
+        }
+
+        /* 576px */
+        @media (max-width: 576px) {
+            header { height: 200px; }
+            aside  { height: 400px; }
+            #article1  { float: none;  width: 100%;  }
+            #article2  { float: none; width: 100%;  }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>헤더</header>
+        <aside>사이드바</aside>
+        <!--<section>-->
+            <article id="article1">아티클 상단</article>
+            <article id="article2">아티클 중간</article>
+            <article id="article3">아티클 하단</article>
+        <!--</section>-->
+        <footer>하단</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 레이아웃 6.0</title>
+    <style>
+        *    { margin: 0; padding: 0;}
+        body { background-color: #fffde7; }
+        #wrap { width: 1200px; margin: 0 auto;}
+        header    { width: 100%; height: 100px; background-color: #ffe082;} 
+        .section1 { width: 100%; height: 300px; background-color: #ffd54f; }
+        .section2 { width: 90%; background-color: #ffca28; overflow: hidden; padding: 5%;}
+        .section2 div { width: 18%; height: 200px;  background-color: #ff9800; border-radius: 5px; float: left; margin: 1%;}
+        footer    { width: 100%; height: 100px; background-color: #ffb300; }
+
+        /*미디어 쿼리 */
+        /* 1200px */
+        @media (max-width: 1240px) {
+            #wrap { width: 100%; }
+            .section2 > div { width: 23%; }  /* div 4개씩 2단구성 */
+            .section2 > div:nth-child(6)  { display: none;}
+            .section2 > div:nth-child(11) { display: none;}
+        }
+        /* 768px */
+        @media (max-width: 768px) {
+            .section2 > div { width: 31.3%; }  /* div 3개씩 3단구성 */
+            .section2 > div:nth-child(6)  { display: block;}
+        }
+        /* 480px */
+        @media (max-width: 480px) {
+            .section2 > div { width: 48%; }  /* div 3개씩 3단구성 */
+            .section2 > div:nth-child(11)  { display: block;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>헤더영역</header>
+        <article class="section1">상단영역</article>
+        <section class="section2">
+            <h2>하단섹션영역</h2>
+            <div>영역-01</div>
+            <div>영역-02</div>
+            <div>영역-03</div>
+            <div>영역-04</div>
+            <div>영역-05</div>
+            <div>영역-06</div>
+            <div>영역-07</div>
+            <div>영역-08</div>
+            <div>영역-09</div>
+            <div>영역-10</div>
+        </section>
+        <footer>푸터영역</footer>
+    </div>
+</body>
+</html>
