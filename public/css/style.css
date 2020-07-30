@@ -6,7 +6,7 @@
 #header { background: url(../img/header_bg.jpg) repeat-x center top; }
 
 /* 컨테이너 */
-.container { width: 1200px; margin: 0 auto;  background: rgba(0,0,0,0.3);}
+.container { width: 1200px; margin: 0 auto;  /*background: rgba(0,0,0,0.3);*/}
 
 /* 헤더영역 */
 .header { height: 327px;}
@@ -29,7 +29,52 @@
 .header .header-title a:hover {
     box-shadow: inset 0 0 0 5px rgba(75,154,191,0.9),
                 inset 0 0 0 100px rgba(0,0,0,0.1)
-} 
+}
+/* 헤더의 아이콘 영역 */
+.header .header-icon { text-align: center; margin-top: 40px; padding-bottom: 45px;}
+.header .header-icon li { display: inline; margin: 2 2px;}
+.header .header-icon li a { 
+    background-color: #319ebf;
+    border-radius: 50%;
+    width: 60px; height: 60px; color: #fff;
+    display: inline-block;  /*  a Tag 가 인라인이므로 block -> inline-block */
+    line-height: 60px; /* 중앙정렬*/
+    font-size: 35px;
+    position: relative;  /* */
+    transition: all 0.3s ease;  /* 0.3초 효과 */
+}
+.header .header-icon li a span {
+     opacity: 0;  /*글씨 안보이는 효과 */
+     position: absolute;
+     left: 50%; top : -40px;
+     transform: translateX(-50%);   /* X 위치를 -50% 다시 이동 */
+     font-size: 12px;
+     line-height: 1.6;
+     background: #3192bf;
+     padding: 3px 9px;
+     border-radius: 6px 0;
+     transition: all 0.3s ease;
+}
+/* 가상요소  하단으로 향하는 삼각형 만들기 */
+.header .header-icon li a span::before {
+    content: '';
+    position: absolute;
+    left: 50%; bottom: -5px;
+    margin-left: -5px;
+    border-top: 5px solid #3192bf;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+.header .header-icon li a:hover span {
+    opacity: 1; 
+    top: -33px;
+}
+/* 마우스가 a Tag 위에 있을 때  안쪽으로 그림자 효과 주기 */
+.header .header-icon li a:hover {
+    box-shadow: inset 0 0 0 3px rgba(75,154,191,0.9), 
+                inset 0 0 0 100px rgba(0,0,0,0.1);
+}
+
 
 /* 미디어 쿼리 */
 /* 1200 px*/    
